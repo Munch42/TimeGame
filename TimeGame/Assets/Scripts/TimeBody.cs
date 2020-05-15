@@ -8,6 +8,8 @@ public class TimeBody : MonoBehaviour
     private bool isRewinding;
 
     public float maxSeconds = 5f;
+    public bool resetVelocity = true;
+    public bool kinematic = false;
 
     List<PointInTime> pointsInTime;
 
@@ -77,6 +79,15 @@ public class TimeBody : MonoBehaviour
     void StopRewind()
     {
         isRewinding = false;
-        rb.isKinematic = false;
+
+        if (!kinematic)
+        {
+            rb.isKinematic = false;
+        }
+
+        if (resetVelocity)
+        {
+            rb.velocity = Vector2.zero;
+        }
     }
 }

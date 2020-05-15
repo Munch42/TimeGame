@@ -275,6 +275,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeconds: 10
+  resetVelocity: 1
+  kinematic: 0
 --- !u!50 &381142381
 Rigidbody2D:
   serializedVersion: 4
@@ -704,6 +706,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeconds: 10
+  resetVelocity: 1
+  kinematic: 0
 --- !u!50 &649496083
 Rigidbody2D:
   serializedVersion: 4
@@ -999,6 +1003,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeconds: 10
+  resetVelocity: 1
+  kinematic: 0
 --- !u!50 &1076334307
 Rigidbody2D:
   serializedVersion: 4
@@ -1121,8 +1127,11 @@ GameObject:
   - component: {fileID: 1183902438}
   - component: {fileID: 1183902437}
   - component: {fileID: 1183902439}
+  - component: {fileID: 1183902440}
+  - component: {fileID: 1183902441}
+  - component: {fileID: 1183902442}
   m_Layer: 0
-  m_Name: Door1
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1218,6 +1227,61 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0981404, y: 0.32}
   m_EdgeRadius: 0
+--- !u!95 &1183902440
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183902436}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be070ac0f8da8c447b7ec9117a09203c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1183902441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183902436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d56f5a4542c33049972b57759ef247a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSeconds: 5
+  resetVelocity: 1
+  kinematic: 1
+--- !u!50 &1183902442
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183902436}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &1313865750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,6 +1316,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeconds: 10
+  resetVelocity: 1
+  kinematic: 0
 --- !u!50 &1313865752
 Rigidbody2D:
   serializedVersion: 4
@@ -1493,6 +1559,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSeconds: 5
+  resetVelocity: 1
+  kinematic: 0
 --- !u!1 &1560485948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1572,7 @@ GameObject:
   - component: {fileID: 1560485950}
   - component: {fileID: 1560485949}
   m_Layer: 0
-  m_Name: Key1
+  m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1568,8 +1636,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560485948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.248, y: -1.808, z: 0}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalPosition: {x: 9.003, y: 0.887, z: 0}
+  m_LocalScale: {x: 3.9584188, y: 4.0000963, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10

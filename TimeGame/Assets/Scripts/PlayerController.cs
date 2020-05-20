@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    public float steepness;
-    public float steepMultiplier;
 
     private float moveInput;
     private Rigidbody2D rb;
@@ -55,9 +53,9 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
-            if (transform.rotation.z > steepness && Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0)
             {
-                rb.velocity = Vector2.up * jumpForce * steepMultiplier;
+                rb.velocity = Vector2.up * jumpForce;
             }
             else
             {
@@ -66,9 +64,9 @@ public class PlayerController : MonoBehaviour
             extraJumps--;
         } else if(Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded)
         {
-            if (transform.rotation.z > steepness && Input.GetAxis("Horizontal") != 0)
+            if (Input.GetAxis("Horizontal") != 0)
             {
-                rb.velocity = Vector2.up * jumpForce * steepMultiplier;
+                rb.velocity = Vector2.up * jumpForce;
             }
             else
             {

@@ -1337,6 +1337,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 973425696678680844, guid: 59254e9494bf9c24ba24bd67e2f05c13,
+        type: 3}
+      propertyPath: doorID
+      value: RedGreen
+      objectReference: {fileID: 0}
     - target: {fileID: 2239568780809456520, guid: 59254e9494bf9c24ba24bd67e2f05c13,
         type: 3}
       propertyPath: m_Color.r
@@ -1436,6 +1441,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2991493477066711049, guid: 1da36ddec2d21b7439df6a61e63abbf5,
+        type: 3}
+      propertyPath: ID
+      value: RedGreen
+      objectReference: {fileID: 0}
     - target: {fileID: 3477594114550794811, guid: 1da36ddec2d21b7439df6a61e63abbf5,
         type: 3}
       propertyPath: m_Color.r

@@ -21,10 +21,13 @@ public class PlayerController : MonoBehaviour
     private int extraJumps;
     public int extraJumpsValue;
 
+    private List<Key> keys;
+
     private void Start()
     {
         extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
+        keys = new List<Key>();
     }
 
     private void FixedUpdate()
@@ -75,11 +78,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Key")
+        {
+            Key key = collision.gameObject.GetComponent<Key>();
+
+            keys.Add(key);
+
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void Flip()
     {
         facingRight = !facingRight;
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+    public List<Key> getKeys()
+    {
+        return keys;
     }
 }

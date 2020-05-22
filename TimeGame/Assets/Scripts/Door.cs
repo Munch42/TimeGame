@@ -5,6 +5,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     public string doorID;
+    Animator doorAnim;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,7 +17,9 @@ public class Door : MonoBehaviour
             {
                 if(key.ID == doorID)
                 {
-                    Destroy(this.gameObject);
+                    doorAnim = gameObject.GetComponentInParent<Animator>();
+                    doorAnim.SetBool("hasKey", true);
+                    //Destroy(this.gameObject);
                     break;
                 }
             }

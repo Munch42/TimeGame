@@ -10,6 +10,7 @@ public class TimeBody : MonoBehaviour
     public float maxSeconds = 5f;
     public bool resetVelocity = true;
     public bool kinematic = false;
+    public bool isDoor = false;
 
     List<PointInTime> pointsInTime;
 
@@ -72,6 +73,21 @@ public class TimeBody : MonoBehaviour
     // Make both of these methods public to access in other scripts ie rewind gun.
     void StartRewind()
     {
+        if (isDoor)
+        {
+            Animator anim = GetComponentInParent<Animator>();
+
+            bool calledL = GetComponentInChildren<DoorColliderLeft>().getCalledStatus();
+            bool calledR = GetComponentInChildren<DoorColliderRight>().getCalledStatus();
+
+            if (anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            {
+                if (calledL || calledR) {
+                    anim.SetTrigger("hasKey");
+                }
+            }
+        }
+
         isRewinding = true;
         rb.isKinematic = true;
     }
@@ -89,5 +105,10 @@ public class TimeBody : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
         }
+    }
+
+    public bool getRewindStatus()
+    {
+        return isRewinding;
     }
 }

@@ -102,4 +102,9 @@ public class PlayerController : MonoBehaviour
     {
         return keys;
     }
+
+    public void setKeys(List<Key> _keys)
+    {
+        keys = _keys;
+    }
 }
